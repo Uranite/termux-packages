@@ -4,10 +4,11 @@ TERMUX_PKG_LICENSE="custom"
 TERMUX_PKG_LICENSE_FILE="LICENSE.md, PATENTS.md"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.3.0"
-TERMUX_PKG_SRCURL=https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${TERMUX_PKG_VERSION}/SVT-AV1-v${TERMUX_PKG_VERSION}.tar.gz
-TERMUX_PKG_SHA256=ebb0b484ef4a0dc281e94342a9f73ad458496f5d3457eca7465bec943910c6c3
+TERMUX_PKG_SRCURL=https://github.com/Uranite/svt-av1-psy/archive/refs/heads/master.zip
+TERMUX_PKG_SHA256=9e559da63c2c920cdfca066ff0dca2a69ffa8d5da2a48d4d58a717a4eadb1463
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+-DSVT_AV1_LTO=OFF
 -DBUILD_TESTING=OFF
 -DCMAKE_OUTPUT_DIRECTORY=$TERMUX_PKG_BUILDDIR
 "
@@ -26,6 +27,8 @@ termux_step_post_get_source() {
 
 termux_step_pre_configure() {
 	LDFLAGS+=" -lm"
+	CFLAGS+=" -flto"
+	CXXFLAGS+=" -flto"
 	case "${TERMUX_ARCH}" in
 	x86_64) LDFLAGS+=" -llog" ;;
 	esac
