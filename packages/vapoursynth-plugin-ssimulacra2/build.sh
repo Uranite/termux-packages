@@ -4,7 +4,7 @@ TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="None"
 TERMUX_PKG_VERSION="1.0.0"
 TERMUX_PKG_SRCURL="https://github.com/Uranite/vapoursynth-ssimulacra2/archive/refs/heads/main.zip"
-TERMUX_PKG_SHA256=13bb272cba97eac7a9c1b234cd1305217d4de113d740b04dcebfa58d1e4410c9
+TERMUX_PKG_SHA256=1cbdeb092a9763014136d874e99ddf15308e65b430f8279565dc09fb73eb0711
 TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_make() {
