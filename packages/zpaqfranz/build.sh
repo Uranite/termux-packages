@@ -1,10 +1,10 @@
-TERMUX_PKG_HOMEPAGE=http://mattmahoney.net/dc/zpaq.html
-TERMUX_PKG_DESCRIPTION="Programmable file compressor, library and utilities. Based on the PAQ compression algorithm"
-TERMUX_PKG_LICENSE="MIT, Unlicense"
+TERMUX_PKG_HOMEPAGE=https://github.com/fcorbelli/zpaqfranz
+TERMUX_PKG_DESCRIPTION="Deduplicating archiver with encryption and paranoid-level tests. ZPAQ 7.15 fork."
+TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=7.15
-TERMUX_PKG_SRCURL=https://github.com/zpaq/zpaq/archive/refs/tags/${TERMUX_PKG_VERSION}.zip
-TERMUX_PKG_SHA256=2d13de90fdd89a8e9eeda4afbf76610d3ace4aa675795b7c3a9f13b21fbdbe3e
+TERMUX_PKG_VERSION=60.10
+TERMUX_PKG_SRCURL=https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/${TERMUX_PKG_VERSION}.zip
+TERMUX_PKG_SHA256=7016cd89ee518092c488b9c5a0937d1f3a567df32810cd9b19623e8ca3f2c3a5
 TERMUX_PKG_DEPENDS="libc++"
 TERMUX_PKG_BUILD_DEPENDS="perl"
 TERMUX_PKG_BUILD_IN_SRC=true

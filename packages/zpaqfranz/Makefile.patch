@@ -1,0 +1,24 @@
+diff --git a/Makefile b/Makefile
+index 6f8a5ad..ca4b71d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -6,15 +6,15 @@
+ ### make install clean
+ ### is good enough
+ 
+-CXX?=           cc
++#CXX?=           cc
+ INSTALL?=       install
+ RM?=            rm
+ PROG=           zpaqfranz
+ SOURCE=         zpaqfranz.cpp
+-CPPFLAGS+=	-Dunix
+-CXXFLAGS+=	-O3 -pthread
++#CPPFLAGS+=	-Dunix
++#CXXFLAGS+=	-O3 -pthread
+ LDLIBS=		-lm
+-BINDIR=         /usr/local/bin
++BINDIR=         ${PREFIX}/bin
+ BSD_INSTALL_PROGRAM?=   ${INSTALL} -m 0755
+ 
+ all:    build
