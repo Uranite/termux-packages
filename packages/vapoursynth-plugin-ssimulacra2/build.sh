@@ -11,7 +11,7 @@ TERMUX_ZIG_VERSION=0.12.0
 
 termux_step_make() {
 	termux_setup_zig
-	zig build -Dtarget=$ZIG_TARGET_NAME -Doptimize=ReleaseFast --search-prefix $TERMUX_PREFIX/system
+	zig build -Dtarget=$ZIG_TARGET_NAME -Doptimize=ReleaseFast --search-prefix $TERMUX_PREFIX
 }
 
 termux_step_make_install() {
