@@ -12,8 +12,12 @@ TERMUX_PKG_BUILD_IN_SRC=true
 termux_step_pre_configure() {
 	./autogen.sh
 	if [ "$TERMUX_ARCH" = "arm" ]; then
-		CFLAGS+=" -march=armv7-a"
-		CXXFLAGS+=" -march=armv7-a"
+		CFLAGS+=" -march=armv8.1-a"
+		CXXFLAGS+=" -march=armv8.1-a"
+	elif [ "$TERMUX_ARCH" = "arm" ]; then
+		CFLAGS+=" -march=armv7-a -mfloat-abi=hard"
+		CXXFLAGS+=" -march=armv7-a -mfloat-abi=hard"
+		LDFLAGS+=" -lcompiler_rt"
 	fi
 }
 
