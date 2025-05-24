@@ -9,6 +9,10 @@ TERMUX_PKG_DEPENDS="python, libzimg"
 TERMUX_PKG_PYTHON_COMMON_DEPS="wheel, 'Cython>=3.0.0'"
 TERMUX_PKG_BUILD_IN_SRC=true
 
+termux_step_pre_configure() {
+	./autogen.sh
+}
+
 termux_step_configure() {
 	./configure --prefix=$PREFIX
 }
