@@ -14,7 +14,7 @@ termux_step_pre_configure() {
 }
 
 termux_step_configure() {
-	./configure --prefix=$PREFIX
+	./configure --prefix=$PREFIX --host=$TERMUX_HOST_PLATFORM
 }
 
 termux_step_make_install() {
