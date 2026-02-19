@@ -6,8 +6,8 @@ TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="8.1.1"
 TERMUX_PKG_SRCURL=https://www.ffmpeg.org/releases/ffmpeg-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=b6863adde98898f42602017462871b5f6333e65aec803fdd7a6308639c52edf3
-TERMUX_PKG_DEPENDS="fontconfig, freetype, fribidi, game-music-emu, glslang, harfbuzz, libaom, libandroid-glob, libandroid-stub, libass, libbluray, libbs2b, libbz2, libdav1d, libiconv, liblzma, libmp3lame, libopencore-amr, libopenmpt, libopus, libplacebo, librav1e, libsoxr, libsrt, libssh, libtheora, libv4l, libvidstab, libvmaf, libvo-amrwbenc, libvorbis, libvpx, libwebp, libx264, libx265, libxml2, libzimg, libzmq, littlecms, ocl-icd, openssl, rubberband, svt-av1, vulkan-icd, xvidcore, zlib"
-TERMUX_PKG_BUILD_DEPENDS="opencl-headers, vulkan-headers"
+TERMUX_PKG_DEPENDS="fontconfig, freetype, fribidi, game-music-emu, glslang, harfbuzz, libaom, libandroid-glob, libandroid-stub, libass, libbluray, libbs2b, libbz2, libdav1d, libiconv, liblzma, libmp3lame, libopencore-amr, libopenmpt, libopus, librav1e, libsoxr, libsrt, libssh, libtheora, libv4l, libvidstab, libvmaf, libvo-amrwbenc, libvorbis, libvpx, libwebp, libx264, libx265, libxml2, libzimg, libzmq, littlecms, ocl-icd, openssl, rubberband, svt-av1, xvidcore, zlib"
+TERMUX_PKG_BUILD_DEPENDS="opencl-headers"
 TERMUX_PKG_CONFLICTS="libav"
 TERMUX_PKG_BREAKS="ffmpeg-dev"
 TERMUX_PKG_REPLACES="ffmpeg-dev"
@@ -100,7 +100,7 @@ termux_step_configure() {
 		--enable-libopencore-amrwb \
 		--enable-libopenmpt \
 		--enable-libopus \
-		--enable-libplacebo \
+		--disable-libplacebo \
 		--enable-librav1e \
 		--enable-librubberband \
 		--enable-libsoxr \
@@ -128,7 +128,7 @@ termux_step_configure() {
 		--prefix="$TERMUX_PREFIX" \
 		--target-os=android \
 		--extra-libs="-landroid-glob" \
-		--enable-vulkan \
+		--disable-vulkan \
 		$_EXTRA_CONFIGURE_FLAGS \
 		--disable-libfdk-aac
 	# GPLed FFmpeg binaries linked against fdk-aac are not redistributable.
